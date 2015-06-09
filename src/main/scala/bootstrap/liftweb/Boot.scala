@@ -36,7 +36,7 @@ class Boot {
     // Use Lift's Mapper ORM to populate the database
     // you don't need to use Mapper to use Lift... use
     // any ORM you want
-    Schemifier.schemify(true, Schemifier.infoF _, User)
+    Schemifier.schemify(true, Schemifier.infoF _, User, Tenant, UserTenant)
 
     // where to search snippet
     LiftRules.addToPackages("code")
@@ -55,7 +55,31 @@ class Boot {
     // set the sitemap.  Note if you don't want access control for
     // each page, just comment this line out.
     LiftRules.setSiteMapFunc(() => sitemapMutators(sitemap))
-
+    
+    
+    // create test users in dev 
+    def createTestData() {
+      Props.mode match {
+        case Props.RunModes.Development => {
+          val testUsers = User.findAll(By(User.superUser, false))
+          testUsers match {
+            case Nil => {
+              CreateTestData.all
+            }
+            case _ => {} // do nothing
+          }
+        }
+        case Props.RunModes.Test => {}
+        case Props.RunModes.Staging    => {}
+        case Props.RunModes.Production => {}
+        case Props.RunModes.Pilot      => {}
+        case Props.RunModes.Profile    => {}
+        case _                         => {}
+      }
+    }
+    createTestData()
+    
+    
     //Init the jQuery module, see http://liftweb.net/jquery for more information.
     LiftRules.jsArtifacts = JQueryArtifacts
     JQueryModule.InitParam.JQuery=JQueryModule.JQuery191

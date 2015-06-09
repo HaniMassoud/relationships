@@ -1,0 +1,98 @@
+@CHARSET "ISO-8859-1";
+.catalogueBoxes ul{
+	margin: 0;
+	padding: 0;	
+}
+.catalogueBoxes li {
+	display: inline;
+	float: left;
+	list-style: none;
+	border: 1px solid #ccc;
+	margin-bottom: 3px; 
+	margin-right: 3px;
+	padding: 3px;
+}
+.catalogueBoxes li:hover {
+	background-color: #eee;
+}
+.catalogueBoxes img {
+	height: 180px; 
+	width: 180px;
+	display:block;
+	margin: 0 auto;
+}
+
+.relationshipCard {
+    margin-bottom: 3px;
+}
+
+.relationshipCard ul{
+	margin: 0;
+	padding: 6px;	
+}
+
+.relationshipCard li {
+	list-style: none;
+}
+
+.relationshipCard li div {
+	margin: 0;
+	padding: 0;
+}
+
+.inline{
+	display:inline;
+}
+
+.relationshipCardHead {
+	color: #fff;
+	background-color: #558A98;
+	overflow: auto;
+	padding-left: 6px;
+}
+
+.relationshipCardBody {
+	background-color: #BFD1D5;
+	overflow: auto;
+	padding-top: 6px;
+}
+
+.relationshipCardFooter {
+	background-color: #c0c0c0;
+	overflow: auto;
+	padding-left: 6px;
+}
+
+.footerLinkSeparator {
+	color: #558A98;
+}
+
+/* hide hidden fields in non-HTML5 browsers */
+*[hidden] { display: none; }
+
+/* vertically center the contents of the row by putting this class for every column */
+.verticalCenter {
+    float:none;
+    display:inline-block;
+    vertical-align:middle;
+    margin-right:-4px;
+}
+
+.addIcon {
+	color: #BFD1D5;
+}
+
+.addIcon:hover {
+	color: white;
+}
+
+// source: http://davidwalsh.name/textarea-width 
+textarea {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	
+	width: 100%;
+}
+
+

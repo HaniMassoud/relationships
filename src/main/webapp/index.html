@@ -12,6 +12,63 @@
       	  Welcome to your Lift app at <span id="time">Time goes here</span>
       	</span>
       </p>
+      <div>
+      	
+      	<div class="row">
+				
+				<div class="col-sm-6 col-md-4 col-lg-3 relationshipCard">
+					<div data-lift="lazy-load" >	
+						<div data-lift="OwnedTenantsShow?parallel=true">
+					<div id="ownedTenants" class="relationshipCard">
+						<div class="relationshipCardHead">
+							<h3>
+								Tenants (<span class="uTenantsCount"></span>)
+							</h3>
+						</div>
+						<div id="tenantsBody" class="relationshipCardBody">
+							<ul>
+							  <span class="uTenants">
+								<li data-row="">
+									<span id="" class="viewMode"> 
+										<a id="" class="tenantLink" href=""><span class="tenantName"></span></a>
+										<span class="pull-right"> 
+											<a role="button" onclick="switchToEditMode($(this))"><span class="glyphicon glyphicon-pencil"></span></a>
+										</span>
+									</span> 
+									
+									<span id="" class="editMode" hidden>
+										<form data-lift="form.ajax">
+											<input type="text" class="form-control editableTenantName resetable" placeholder="Tenant Name">
+											<button type="button" class="btn btn-link tenantNameSave"></button>
+											<button type="button" class="btn btn-link" onclick="cancelEditing($(this))">Cancel</button>
+											<button type="button" class="btn btn-link" onclick="resetText($(this))">Reset</button>
+										</form>
+									</span>
+									
+								</li>
+							  </span>
+							</ul>
+						</div>
+						<div class="relationshipCardFooter">
+							<div class="lift:OwnedTenantsShow.paginate">
+								<nav:first></nav:first>
+								<nav:prev></nav:prev>
+								<nav:allpages><span class="footerLinkSeparator"> | </span> 
+								</nav:allpages>
+								<nav:next></nav:next>
+								<nav:last></nav:last>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				</div>
+				
+				
+				
+			</div>
+      	
+      </div>
     </div>
   </body>
 </html>
