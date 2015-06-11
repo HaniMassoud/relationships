@@ -37,6 +37,28 @@ object CreateTestData {
     tenant1.users += user12
     tenant1.save()
     
+    // Assign a Selected Tenant for each User
+    //user1.selectedTenant.set(tenant1.id.get)
+    user2.selectedTenant.set(tenant2.id.get)
+    user3.selectedTenant.set(tenant3.id.get)
+    user4.selectedTenant.set(tenant4.id.get)
+    user5.selectedTenant.set(tenant5.id.get)
+    user6.selectedTenant.set(tenant6.id.get)
+    //user7.selectedTenant.set(tenant1.id.get)
+    //user8.selectedTenant.set(tenant1.id.get)
+    //user9.selectedTenant.set(tenant1.id.get)
+    //user10.selectedTenant.set(tenant1.id.get)
+    user1.save
+    user2.save
+    user3.save
+    user4.save
+    user5.save
+    user6.save
+    user7.save
+    user8.save
+    user9.save
+    user10.save
+    
   }
   
   def createUser(name:String) =

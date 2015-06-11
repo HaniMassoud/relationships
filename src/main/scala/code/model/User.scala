@@ -36,12 +36,30 @@ class User extends MegaProtoUser[User]
     override def displayName = "Personal Essay"
   }
   
+  /** returns the list of tenants for which the user is an authorized admin */
+  def administeredTenants: List[Tenant] = {
+    
+    Tenant.findAll
+        
+  }
+  
+  /** returns the list of users for which this user is an authorized admin */
+  def administeredUsers: List[User] ={
+    
+    User.findAll
+    
+  }
+  
   /** returns list of tenants that this user is assigned to */
   object assignedToTenants extends MappedManyToMany(UserTenant,
     UserTenant.user, UserTenant.tenant, Tenant)
   
   /** returns list of tenants that this user owns */
   object ownedTenants extends MappedOneToMany(Tenant, Tenant.owner, OrderBy(Tenant.id, Ascending))
+  
+  /** Returns the Tenant that this User has selected to currently work with - One Tenant can be selected by Many Users */
+  object selectedTenant extends MappedLongForeignKey(this, Tenant)
+  
   
 }
 

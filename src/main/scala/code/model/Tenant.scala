@@ -23,6 +23,9 @@ class Tenant extends LongKeyedMapper[Tenant]
   /** Returns the User that owns this Tenant - One User can own Many Tenants */
   object owner extends MappedLongForeignKey(this, User)
   
+  /** returns list of users that have currently selected this tenant to work on */
+  object selectedByUsers extends MappedOneToMany(User, User.selectedTenant, OrderBy(User.id, Ascending))
+  
   /** returns list of users directly assigned this Tenant */
   object users extends MappedManyToMany(UserTenant,
     UserTenant.tenant, UserTenant.user, User)
